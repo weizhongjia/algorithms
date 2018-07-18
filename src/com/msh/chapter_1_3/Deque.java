@@ -1,9 +1,8 @@
 package com.msh.chapter_1_3;
 
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
-public class Deque<Item> {
+public class Deque<Item> implements IDeque<Item> {
     private Node left;
     private Node right;
     private int N;
