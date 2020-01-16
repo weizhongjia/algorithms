@@ -1,4 +1,4 @@
-package com.msh.chapter_1_3;
+package chapter_1_3;
 
 /**
  * Created by weizhongjia on 2018/7/11.

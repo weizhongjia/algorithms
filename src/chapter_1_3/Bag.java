@@ -1,16 +1,18 @@
-package com.msh.chapter_1_3;
+package chapter_1_3;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
 
 /**
  * Created by weizhongjia on 2018/7/11.
  */
-public class Stack<Item> implements IStack<Item>, Iterable<Item> {
+public class Bag<Item> implements Iterable<Item>{
     private Node first;
     private int N;
 
-    @Override
-    public void push(Item item) {
+    public void add(Item item) {
         Node node = new Node();
         node.item = item;
         Node oldFirst = first;
@@ -19,30 +21,10 @@ public class Stack<Item> implements IStack<Item>, Iterable<Item> {
         N++;
     }
 
-    @Override
-    public Item pop() {
-        if (first == null) {
-            return null;
-        }
-        Item item = first.item;
-        first = first.next;
-        N--;
-        return item;
-    }
-
-    public Item peek() {
-        if (first == null) {
-            return null;
-        }
-        return first.item;
-    }
-
-    @Override
     public boolean isEmpty() {
         return first == null;
     }
 
-    @Override
     public int size() {
         return N;
     }
@@ -51,6 +33,7 @@ public class Stack<Item> implements IStack<Item>, Iterable<Item> {
     public Iterator<Item> iterator() {
         return new ListIterator();
     }
+
     private class ListIterator implements Iterator<Item> {
 
         private Node currentNode = first;
@@ -71,5 +54,16 @@ public class Stack<Item> implements IStack<Item>, Iterable<Item> {
     private class Node {
         Item item;
         Node next;
+    }
+
+    public static void main(String[] args) {
+        Bag<String> bag = new Bag<>();
+        while(!StdIn.isEmpty()) {
+            bag.add(StdIn.readString());
+        }
+        Iterator<String> i = bag.iterator();
+        while (i.hasNext()) {
+            StdOut.println(i.next());
+        }
     }
 }

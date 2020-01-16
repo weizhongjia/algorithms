@@ -1,6 +1,6 @@
-package com.msh.chapter_1_3;
+package chapter_1_3;
 
-import com.msh.chapter_1_3.Stack;
+import chapter_1_3.Stack;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 

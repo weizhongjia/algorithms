@@ -1,4 +1,4 @@
-package com.msh.chapter_1_3;
+package chapter_1_3;
 
 /**
  * 出栈操作书中的代码有问题。isEmpty方法如果使用N==0判断的话，需要先N--再判断是否要将last改为null
